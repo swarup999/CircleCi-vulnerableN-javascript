@@ -41,8 +41,9 @@ jobs:
           output: 'trivy-results.sarif'
           severity: 'CRITICAL,HIGH'
 
-      - name: Set file permissions
-        run: chmod 666 trivy-results.sarif
+      - run: id
+      - run: ls -la trivy-results.sarif
+      - run: chmod 666 trivy-results.sarif
 
       - uses: actions/github-script@v7
         with:
