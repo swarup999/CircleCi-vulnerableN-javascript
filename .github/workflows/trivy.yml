@@ -43,6 +43,7 @@ jobs:
 
       - uses: actions/cache@v3
         with:
+          key: 'results.sarif'
           path: 'trivy-results.sarif'
 
       - name: Upload Trivy scan results to GitHub Security tab
