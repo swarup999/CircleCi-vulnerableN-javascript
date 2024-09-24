@@ -41,9 +41,9 @@ jobs:
           output: 'trivy-results.sarif'
           severity: 'CRITICAL,HIGH'
 
-      - uses: actions/cache@v3
+      - uses: actions/upload-artifact@v4
         with:
-          key: 'results.sarif'
+          name: 'results.sarif'
           path: 'trivy-results.sarif'
 
       - name: Upload Trivy scan results to GitHub Security tab
